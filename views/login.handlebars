@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectAwesome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="....">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('...');
+        }
+
+        .row {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 12px 12px 22px gray;
+        }
+
+        img {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .btn1 {
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn1:hover {
+            background: white;
+            border: 1px solid;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="form mt-5 mb-5">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <img src="https://unsplash.com/photos/aiwuLjLPFnU" class="img-fluid" alt="...">
+                </div>
+                <div class="col-lg-7 px-5 pt-5">
+                    <h1 class="font-weight-bold py-3">Project Awesome/Logo</h1>
+                    <h4>Please sign in to get started</h4>
+                    <form>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="email" class="form-control my-3 p-4" placeholder="Email Address">
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="password" class="form-control my-3 p-4" placeholder="Password">
+                            </div>
+                            <div class="col-lg-7">
+                                {{!-- <button type="button" class="btn btn-primary btn-lg mt-3 mb-5"> --}}
+                                    <button type="button" class="btn1 mt-3 mb-5"></button>
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                        <a href="#">Forgot password?</a>
+                        <p></p>
+                        <a href="#">Sign-up</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
