@@ -9,10 +9,14 @@
     <li>race date</li>
 </ul>
 {{#each races as |race|}}
-<p>race id: {{race.id}}</p>
-<p>location name: {{race.title}}</p>
-<p>race location_town: {{race.location_town}}</p>
-<p>race location_state: {{race.location_state}}</p>
-<p>race date: {{race.race_date}}</p>
-<hr class="m-3">
+<a href="/race/{{race.id}}">
+<div>
+    <p>race id: {{race.id}}</p>
+    <p>location name: {{race.title}}</p>
+    <p>race location_town: {{race.location_town}}</p>
+    <p>race location_state: {{race.location_state}}</p>
+    <p>race date: {{race.race_date}}</p>
+    </div>
+</a>
+    <hr class="m-3">
 {{/each}}
