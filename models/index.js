@@ -1,6 +1,7 @@
 const User = require('./Users');
 const Race = require('./Races');
 const Car = require('./Cars');
+const Entry = require('./Entry');
 
 User.hasMany(Car, {
     foreignKey: 'user_id',
@@ -12,19 +13,47 @@ Car.belongsTo(User, {
 });
 
 Race.belongsToMany(Car, {
-    through: 'event',
+      // Define the third table needed to store the foreign keys
+  through: {
+    model: Entry,
+    unique: false
+  },
+  // Define an alias for when data is retrieved
+  as: 'race_car',
+  foreignKey: 'race_id'
 });
 
 Car.belongsToMany(Race, {
-    through: 'event'
+      // Define the third table needed to store the foreign keys
+  through: {
+    model: Entry,
+    unique: false
+  },
+  // Define an alias for when data is retrieved
+  as: 'car_race',
+  foreignKey: 'car_id'
 });
 
 Race.belongsToMany(User, {
-    through: 'event',
+      // Define the third table needed to store the foreign keys
+  through: {
+    model: Entry,
+    unique: false
+  },
+  // Define an alias for when data is retrieved
+  as: 'race_user',
+  foreignKey: 'race_id'
 });
 
 User.belongsToMany(Race, {
-    through: 'event'
+      // Define the third table needed to store the foreign keys
+  through: {
+    model: Entry,
+    unique: false
+  },
+  // Define an alias for when data is retrieved
+  as: 'user_race',
+  foreignKey: 'user_id'
 });
 
-module.exports = { User, Race, Car };
+module.exports = { User, Race, Car, Entry };

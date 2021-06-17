@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Car extends Model {}
+class Entry extends Model {}
 
-Car.init(
+Entry.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,26 +11,13 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    make: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    model: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    horsepower: {
+    race_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    topSpeed: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    acceleration: {
-        type: DataTypes.DECIMAL(10,2),
-        allowNull: false,
-    },
+        references: {
+          model: 'race',
+          key: 'id',
+        },
+      },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -38,14 +25,21 @@ Car.init(
         key: 'id',
       },
     },
+    car_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'car',
+          key: 'id',
+        },
+      },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'car',
+    modelName: 'entry',
   }
 );
 
-module.exports = Car;
+module.exports = Entry;

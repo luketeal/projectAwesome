@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Race extends Model {}
@@ -15,28 +15,19 @@ Race.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Location: {
+    location_town: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    location_state: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     race_date: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    car_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'car',
-          key: 'id',
-        },
-      },
   },
   {
     sequelize,
