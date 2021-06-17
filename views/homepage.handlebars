@@ -1,2 +1,18 @@
 <p>this is the homepage</p>
 <p>TODO: Display upcoming Races</p>
+<p>accessible info includes</p>
+<ul>
+    <li>race id</li>
+    <li>location name</li>
+    <li>race location_town</li>
+    <li>race location state</li>
+    <li>race date</li>
+</ul>
+{{#each races as |race|}}
+<p>race id: {{race.id}}</p>
+<p>location name: {{race.title}}</p>
+<p>race location_town: {{race.location_town}}</p>
+<p>race location_state: {{race.location_state}}</p>
+<p>race date: {{race.race_date}}</p>
+<hr class="m-3">
+{{/each}}
