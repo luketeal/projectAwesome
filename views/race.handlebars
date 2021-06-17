@@ -1,3 +1,24 @@
 <p>this is the race</p>
-<p>TODO: Display Race information and current competition</p>
+<p>TODO: Display Race information</p> 
+<p>info available</p>
+<ul>
+    <li>race id: {{race.id}}</li>
+    <li>race location name: {{race.title}}</li>
+    <li>race location town: {{race.location_town}}</li>
+    <li>race location state: {{race.location_state}}</li>
+    <li>race date: {{race.race_date}}</li>
+</ul>
+<p>TODO: Display current competition</p>
+{{#each race.race_car as |entry|}}
+<ul>
+    <li>participant: {{entry.user.name}}</li>
+    <li>the make of vehicle that {{entry.user.name}} entered: {{entry.make}}</li>
+    <li>it's model: {{entry.model}}</li>
+    <li>and it's statistics including horsepower: {{entry.horsepower}}</li>
+    <li>top speed: {{entry.topSpeed}}</li>
+    <li>and acceleration: {{entry.acceleration}}</li>
+</ul>
+
+{{/each}}
 <p>TODO: allow logged-in user to register</p>
+<button>Register for the Race!!!</button>
