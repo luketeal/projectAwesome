@@ -2,32 +2,32 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Cars, Races, Users } = require('../models');
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   
     res.render('login');
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', async (req, res) => {
   
     res.render('logout');
 });
 
-router.get('/signup', (req, res) => {
+router.get('/signup', async (req, res) => {
   
     res.render('signup');
 });
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   
     res.render('homepage');
 });
 
-router.get('/garage', (req, res) => {
+router.get('/garage', async (req, res) => {
   
     res.render('garage');
 });
 
-router.get('/race', (req, res) => {
+router.get('/race', async (req, res) => {
   
     res.render('race');
 });
