@@ -4,9 +4,9 @@ html {
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background-image: url('...');
-}
+} */
 
 .row {
     background: white;
