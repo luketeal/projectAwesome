@@ -68,7 +68,7 @@ app.use(passport.session())// done
 const { User } = require('./models');// done
 
 //Routes
-var authRoute = require('./app/routes/auth.js')(app,passport);// done
+var authRoute = require('./controllers/auth.js')(app,passport);// done
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, User);// done
