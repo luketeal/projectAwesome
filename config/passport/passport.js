@@ -46,9 +46,7 @@ module.exports = function(passport, user) {
              
                             password: userPassword,
              
-                            firstname: req.body.firstname,
-             
-                            lastname: req.body.lastname
+                            name: req.body.name,
              
                         };
              
@@ -71,7 +69,15 @@ module.exports = function(passport, user) {
              
                 }
              
-            });
+            }).catch(function(err) {
+ 
+                console.log("Error:", err);
+     
+                return done(null, false, {
+                    message: 'Something went wrong with your Signup'
+                });
+     
+            });;
         }
      
     ));
