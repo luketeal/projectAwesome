@@ -2,38 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Login info stuff??-->
-    {{!-- <title> {{# if loggedin}} Welcome: {{userName}} </title> --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/style.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Login info stuff??-->
+  {{!-- <title> {{# if loggedin}} Welcome: {{userName}} </title> --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style/style.css" />
 </head>
 
-<div class="text-center">
-    <h1>Project Awesome!</h1>
+<div class="text-center p-2">
+  <img src="./assets/logo2.png" class="img-fluid" alt="logo2">
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/">Home &nbsp;|</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/garage">Garage</a>
+          <a class="nav-link" href="/garage">Garage &nbsp;|</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/signup">Sign Up</a>
+          <a class="nav-link" href="/signup">Sign Up &nbsp;|</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout">Log Out</a>
+          <a class="nav-link" href="/logout">Log Out &nbsp;|</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/login">Log In</a>
@@ -44,10 +45,20 @@
 </nav>
 
 <body>
-    <main>
+  <main>
     {{{body}}}
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <footer class="text-muted p-3">
+    <div class="container">
+      <p class="text-center">
+        © Project 2 Dream Team: Luke | Corey | Kit
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

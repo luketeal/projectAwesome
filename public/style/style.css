@@ -4,9 +4,21 @@ html {
     box-sizing: border-box;
 }
 
-/* body {
-    background-image: url('...');
-} */
+.jumbotron {
+    align-items: center;
+    display: flex;
+    background-image: url('https://images.unsplash.com/photo-1567940983865-4cb839a96638?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1778&q=80');
+    background-size: cover;
+    height: 70vh;
+    color: white;
+}
+
+.bg-image {
+    background-image: url('https://images.unsplash.com/photo-1620599889624-6e666fb22d83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
+    background-size: cover;
+    height: 80vh;
+    color: white;
+}
 
 .row {
     background: white;
@@ -31,7 +43,7 @@ img {
 }
 
 .btn1:hover {
-    background: white;
+    background: #ff9e00;
     border: 1px solid;
     color: black;
 }
