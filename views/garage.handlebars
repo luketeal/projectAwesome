@@ -1,6 +1,163 @@
-<p>this is the garage</p>
+{{!-- car input section --}}
+{{!-- fix overlap when resizing window --}}
+<section class="bg-image p-3">
+    <div class="text-center pt-3">
+        <h1 class="font-weight-bold py-4">Garage</h1>
+        <h4>Enter your vechicle information</h4>
+    </div>
+
+    <div class="col-lg-6 offset-lg-3 mt-5">
+        <form class="col-lg-4 offset-md-4">
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="inputMake" placeholder="Make">
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="inputModel" placeholder="Model">
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="inputHorsepower" placeholder="Horsepower">
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="inputTopspeed" placeholder="Top Speed">
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" id="inputAcceleration" placeholder="Acceleration">
+            </div>
+
+            <div class="text-center">
+                <div class="col-lg-4 offset-lg-4">
+                    <button type="submit" class="btn1 mt-3 mb-5">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+{{!-- car section --}}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-6 p-4">
+                <div class="card flex-mb-4 box-shadow h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <h3 class="mb-0">
+                            Car name {make}{model}
+                        </h3>
+                        <div class="mb-1 text-muted">
+                            Race date
+                        </div>
+                        <p class="card-text mb-auto">
+                        <ul>
+                            <li>horsepower</li>
+                            <li>top speed</li>
+                            <li>acceleration</li>
+                            <li>user id?</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block"
+                        src="https://images.unsplash.com/photo-1556213313-fc5be959c4a9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
+                        alt="pic2">
+                </div>
+            </div>
+            <div class="col-md-6 p-4">
+                <div class="card flex-mb-4 box-shadow h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <h3 class="mb-0">
+                            Car name {make}{model}
+                        </h3>
+                        <div class="mb-1 text-muted">
+                            Race date
+                        </div>
+                        <p class="card-text mb-auto">
+                        <ul>
+                            <li>horsepower</li>
+                            <li>top speed</li>
+                            <li>acceleration</li>
+                            <li>user id?</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block"
+                        src="https://images.unsplash.com/photo-1561444533-e11ac252308d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80"
+                        alt="pic5">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- track section --}}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card m-4 box-shadow p-3">
+                    <img src="https://image.freepik.com/free-vector/suzuka-circuit-motorsport-autosport-japan-grand-prix-race-track_97886-5398.jpg"
+                        class="card-img-top" alt="suzuka">
+                    <h5 class="card-title text-center pt-3">Track 1/id etc</h5>
+                    <p class="card-text text-center">You are going to this track or are registered for this
+                        track</p>
+                    <ul>
+                        <li>race id</li>
+                        <li>location name</li>
+                        <li>race location_town</li>
+                        <li>race location state</li>
+                        <li>race date</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card m-4 box-shadow p-3">
+                    <img src="https://image.freepik.com/free-vector/silverstone-circuit-motorsport-autosport-britain-grand-prix-race-track_97886-5394.jpg"
+                        class="card-img-top" alt="silverstone">
+                    <h5 class="card-title text-center pt-3">Track 1/id etc</h5>
+                    <p class="card-text text-center">You are going to this track or are registered for this
+                        track</p>
+                    <ul>
+                        <li>race id</li>
+                        <li>location name</li>
+                        <li>race location_town</li>
+                        <li>race location state</li>
+                        <li>race date</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card m-4 box-shadow p-3">
+                    <img src="https://image.freepik.com/free-vector/barcelona-catalunya-circuit-motorsport-autosport-spain-grand-prix-race-track_97886-5372.jpg"
+                        class="card-img-top" alt="barcelona">
+                    <h5 class="card-title text-center pt-3">Track 1/ race id etc</h5>
+                    <p class="card-text text-center">You are going to this track or are registered for this
+                        track</p>
+                    <ul>
+                        <li>race id</li>
+                        <li>location name</li>
+                        <li>race location_town</li>
+                        <li>race location state</li>
+                        <li>race date</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!--
+======================================================================================================================
+--}}
+
+{{!-- <p>this is the garage</p>
 <p>TODO: display users cars</p>
+<p>TODO: create form to add car</p>
 <p>TODO: display upcoming races for the logged in user and the car they have signed up for each race</p>
+
+
+dropdown menu with user cars
+--}}
+
+
 <p>TODO: buttons to update the vehicle information or delete the vehicle</p>
 <p> for example the cars that this user has are:</p>
 {{#each cars as |car|}}
@@ -8,12 +165,11 @@
 <p>it has {{car.horsepower}} hp and a top speed of {{car.topspeed}}</p>
 <p>it can go 0 to 60 in {{car.acceleration}} seconds</p>
 <p>it is scheduled to race in the following races:</p>
-    {{#each car.car_race as |race|}}
-    <ul>
-        <li>{{race.title}} in {{race.location_town}}, {{race.location_state}} on {{race.race_date}}</li>
-    </ul>
-    {{/each}}
-    <button>Update Vehicle Info</button>
-    <button>Delete your {{car.make}} {{car.model}}</button>
+{{#each car.car_race as |race|}}
+<ul>
+    <li>{{race.title}} in {{race.location_town}}, {{race.location_state}} on {{race.race_date}}</li>
+</ul>
 {{/each}}
-
+<button>Update Vehicle Info</button>
+<button>Delete your {{car.make}} {{car.model}}</button>
+{{/each}}
