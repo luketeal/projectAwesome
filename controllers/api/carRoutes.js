@@ -28,12 +28,12 @@ router.put('/:id', async (req, res) => {    // Need to find out path to where we
     const carData = await Car.findByPk(req.params.id)
 
     if(carData) {
-        car.make = req.body.make;
-        car.model = req.body.model;
-        car.horsepower = req.body.horsepower;
-        car.topSpeed = req.body.topSpeed;
-        car.acceleration = req.body.acceleration;
-        car.user_id = req.user.id;
+        carData.make = req.body.make;
+        carData.model = req.body.model;
+        carData.horsepower = req.body.horsepower;
+        carData.topSpeed = req.body.topSpeed;
+        carData.acceleration = req.body.acceleration;
+        carData.user_id = req.body.user_id;
         await carData.save()
     }
     else {
