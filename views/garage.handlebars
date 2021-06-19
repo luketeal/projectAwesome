@@ -1,3 +1,19 @@
 <p>this is the garage</p>
 <p>TODO: display users cars</p>
 <p>TODO: display upcoming races for the logged in user and the car they have signed up for each race</p>
+<p>TODO: buttons to update the vehicle information or delete the vehicle</p>
+<p> for example the cars that this user has are:</p>
+{{#each cars as |car|}}
+<p>this user has a {{car.make}} {{car.model}} with</p>
+<p>it has {{car.horsepower}} hp and a top speed of {{car.topspeed}}</p>
+<p>it can go 0 to 60 in {{car.acceleration}} seconds</p>
+<p>it is scheduled to race in the following races:</p>
+    {{#each car.car_race as |race|}}
+    <ul>
+        <li>{{race.title}} in {{race.location_town}}, {{race.location_state}} on {{race.race_date}}</li>
+    </ul>
+    {{/each}}
+    <button>Update Vehicle Info</button>
+    <button>Delete your {{car.make}} {{car.model}}</button>
+{{/each}}
+
