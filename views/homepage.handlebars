@@ -37,11 +37,13 @@
                     {{!-- this will be a dropdown with a list of items to register for race --}}
                     <form>
                         <select class="form-control">
+                            {{#each cars as |car|}}
                             <option>{{car.make}}{{car.model}}</option>
                             <option>car selection</option>
+                            {{/each}}
                         </select>
                         <div class="mt-4 text-center">
-                            <a href="submit" class="btn btn-dark">Register for race</a>
+                            <button type="submit" class="btn btn-dark">Register for race</button>
                         </div>
                     </form>
                 </div>
@@ -53,6 +55,10 @@
 </div>
 </div>
 
+                            {{#each cars as |car|}}
+                            <option>{{car.make}}{{car.model}}</option>
+                            <option>car selection</option>
+                            {{/each}}
 {{!-- Need links and hrefs etc for items ^^^^ --}}
 
 {{!-- ============================================================================ --}}

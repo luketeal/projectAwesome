@@ -19,11 +19,15 @@ exports.homepage = async function(req, res) {
     {
     // Get all Race data
     const raceData = await Race.findAll();
+    const carData = await Car.findAll({where: {user_id: req.user.id}})
+    const cars= carData.map((car) => car.get({ plain: true }));
+  
     const races = raceData.map((race) => race.get({ plain: true }));
-    // console.log(races)
+    console.log(races);
+    console.log(cars)
     res.render('homepage', {
         races, 
-        logged_in: req.session.logged_in
+       cars
     });
     } catch (err) {
         res.status(500).json(err);
