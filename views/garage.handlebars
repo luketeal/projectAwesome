@@ -7,26 +7,26 @@
     </div>
 
     <div class="col-lg-6 offset-lg-3 mt-5">
-        <form class="col-lg-4 offset-md-4">
+        <form id="cars" name="cars" class="col-lg-4 offset-md-4">
             <div class="row mb-3">
-                <input type="text" class="form-control" id="inputMake" placeholder="Make">
+                <input type="text" class="form-control" id="make" name="make" placeholder="Make">
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="inputModel" placeholder="Model">
+                <input type="text" class="form-control" id="model" name="model" placeholder="Model">
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="inputHorsepower" placeholder="Horsepower">
+                <input type="text" class="form-control" id="horsepower" name="horsepower" placeholder="Horsepower">
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="inputTopspeed" placeholder="Top Speed">
+                <input type="text" class="form-control" id="topSpeed" name="topSpeed" placeholder="Top Speed">
             </div>
             <div class="row mb-3">
-                <input type="text" class="form-control" id="inputAcceleration" placeholder="Acceleration">
+                <input type="text" class="form-control" id="acceleration" name="acceleration" placeholder="Acceleration">
             </div>
 
             <div class="text-center">
                 <div class="col-lg-4 offset-lg-4">
-                    <button type="submit" class="btn1 mt-3 mb-5">Submit</button>
+                    <button type="submit" class="carPost btn1 mt-3 mb-5">Submit</button>
                 </div>
             </div>
         </form>
@@ -173,3 +173,5 @@ dropdown menu with user cars
 <button>Update Vehicle Info</button>
 <button>Delete your {{car.make}} {{car.model}}</button>
 {{/each}}
+
+<script src="../js/garage.js"></script>

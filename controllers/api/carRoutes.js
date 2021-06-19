@@ -14,8 +14,16 @@ router.get('/', async (req, res) => {
 
 
 // http://localhost:3001/api/cars/garage
-router.post('/garage', async (req, res) => {
-    const carData = await Car.create(req.body);
+router.post('/', async (req, res) => {
+  console.log(req.session.passport.user + ' is from passport')
+    const carData = await Car.create({
+      make: req.body.make,
+      model: req.body.model,
+      horsepower: req.body.horsepower,
+      topSpeed: req.body.topSpeed,
+      acceleration: req.body.acceleration,
+      user_id: req.session.passport.user,
+      });
   
     return res.json(carData);
   });
