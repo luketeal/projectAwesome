@@ -37,7 +37,7 @@ exports.homepage = async function(req, res) {
 }
 
 exports.garage = async function(req, res) {
-    console.log(req.user)
+    // console.log(req.user)
     try {
         // Get Car Data
         const carData = await Car.findAll({
@@ -55,12 +55,14 @@ exports.garage = async function(req, res) {
             ]
         }
         )
+        const userData = await User.findByPk(req.user.id)
         const cars = carData.map((car) => car.get({ plain: true }));
-        console.log(cars)
-        console.log(cars[0].car_race)
+        const user = userData.get({ plain: true });
+        console.log(user.id + ' please work')
+        // console.log(cars[0].car_race)
         res.render('garage', {
             cars,
-            logged_in: req.session.logged_in
+            user
         });
     } catch (err) {
         res.status(500).json(err);
