@@ -3,13 +3,13 @@ const Entry = require('../../models/Entry');
 
 
 
-
-// http://localhost:3001/api/entries
 router.post('/', async (req, res) => {
+
     const entryData = await Entry.create(req.body);
   
     return res.json(entryData);
   });
+
 
 
 
@@ -41,5 +41,6 @@ router.delete('/:id', async (req, res) => {
   
     return res.json(entryData);
   });
+
   
 module.exports = router;
