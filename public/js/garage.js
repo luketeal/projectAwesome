@@ -1,5 +1,6 @@
 let carPostButton = document.querySelector('.carPost')
-// let deleteButtons = document.querySelectorAll('.deleteButton')
+let deleteButtons = document.querySelectorAll('.deleteButton')
+// let udpateButtons = document.querySelectorAll('.udpateButton')
 
 // console.log(req.user)
 
@@ -28,7 +29,7 @@ const carPostFormHandler = async (event) => {
     }
   };
 
-// const blogUpdateFormHandler = async (event) => {
+// const carUpdateFormHandler = async (event) => {
 //   event.preventDefault();
 //   const id = event.target.getAttribute('data-id')
 
@@ -50,33 +51,33 @@ const carPostFormHandler = async (event) => {
 //   }
 // };
 
-// const blogDeleteHandler = async (event) => {
-//   event.preventDefault();
-//   const id = event.target.getAttribute('data-id')
+const carDeleteHandler = async (event) => {
+  event.preventDefault();
+  const id = event.target.getAttribute('data-id')
   
-//     const response = await fetch(`/api/blogPost/`, {
-//       method: 'DELETE',
-//       body: JSON.stringify({ id }),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
+    const response = await fetch(`/api/cars/${id}`, {
+      method: 'DELETE',
+      body: JSON.stringify({ id }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-//     if (response.ok) {
-//       document.location.reload();
-//     } else {
-//       alert(response.statusText);
-//     }
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
   
-// };
+};
   
 document
   .querySelector('.carPost')
   .addEventListener('click', carPostFormHandler);
 
-// for(each of postButtons) {
-//   each.addEventListener('click', blogUpdateFormHandler);
+// for(each of updateButtons) {
+//   each.addEventListener('click', carUpdateFormHandler);
 // }
 
-// for(each of deleteButtons) {
-//   each.addEventListener('click', blogDeleteHandler);
-// }
+for(each of deleteButtons) {
+  each.addEventListener('click', carDeleteHandler);
+}
 

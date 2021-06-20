@@ -77,8 +77,8 @@
                                 {{/each}}
                             </ul>
                         </div>
-                        <input class="btn btn-dark mb-2" type="submit" value="Update">
-                        <input class="btn btn-warning mb-2" type="submit" value="Delete">
+                        <input class="btn btn-dark mb-2" type="button" value="Update" data-id="{{car.id}}">
+                        <input class="btn btn-warning mb-2 deleteButton" type="button" value="Delete" data-id="{{car.id}}">
 
                         {{/each}}
                     </div>
