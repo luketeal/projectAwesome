@@ -167,11 +167,48 @@
                         {{#each races as |race|}}
                         <div class="container text-center">
                             <h3 class="card-title text-center pt-3">{{race.title}}</h3>
-                            <p>{{race.location_town}}, {{race.location_state}} on {{race.race_date}}</p>
-                            <input class="btn btn-dark mb-2" type="button" value="Update" data-bs-toggle="modal" data-bs-target="#car{{car.id}}">
+                            <p>{{race.location_town}}, {{race.location_state}} on {{format_date race.race_date}}</p>
+                            <input class="btn btn-dark mb-2" type="button" value="Update" data-bs-toggle="modal" data-bs-target="#race{{race.id}}">
                             <input class="btn btn-warning mb-2 raceDeleteButton" type="button" value="Delete" data-id="{{race.id}}">
-
                         </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="race{{race.id}}" tabindex="-1" aria-labelledby="race{{race.id}}Label" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="race{{race.id}}Label">Update your specs</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form class="racePost-form">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="racetitle{{race.id}}" class="form-label">Title</label>
+                                        <input type="text" class="form-control" id="racetitle{{race.id}}" value="{{race.title}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="racelocation_town{{race.id}}" class="form-label">Town</label>
+                                        <input type="text" class="form-control" id="racelocation_town{{race.id}}" value="{{race.location_town}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="racelocation_state{{race.id}}" class="form-label">State</label>
+                                        <input type="text" class="form-control" id="racelocation_state{{race.id}}" value="{{race.location_state}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="race_date{{race.id}}" class="form-label">Date</label>
+                                        <input type="date" class="form-control" id="race_date{{race.id}}" value="{{prefilled_date race.race_date}}">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-warning raceUpdateButton" data-id={{race.id}}>Save changes</button>
+                                </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+
+
                         {{/each}}
                         
                     </div>

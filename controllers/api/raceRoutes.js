@@ -14,24 +14,23 @@ router.post('/', async (req, res) => {
     return res.json(routeData);
 });
 
-// router.put('/', async (req, res) => {    // Need to find out path to where we will be entering car info.
+router.put('/:id', async (req, res) => {    // Need to find out path to where we will be entering car info.
+  
+    const raceData = await Race.findByPk(req.params.id)
 
-//     const carData = await Car.findByPk(req.params.id)
-
-//     if(carData) {
-//         carData.make = req.body.make;
-//         carData.model = req.body.model;
-//         carData.horsepower = req.body.horsepower;
-//         carData.topSpeed = req.body.topSpeed;
-//         carData.acceleration = req.body.acceleration;
-//         carData.user_id = req.session.passport.user;
-//         await carData.save()
-//     }
-//     else {
-//         res.status(404).send()
-//     }
-//     return res.json(carData);
-// })
+    if(raceData) {
+        raceData.title = req.body.title;
+        raceData.location_town = req.body.location_town;
+        raceData.location_state = req.body.location_state;
+        raceData.race_date = req.body.race_date;
+        raceData.owner_id = req.session.passport.user;
+        await raceData.save()
+    }
+    else {
+        res.status(404).send()
+    }
+    return res.json(raceData);
+})
 
 router.delete('/:id', async (req, res) => {
     const raceData = await Race.destroy({
