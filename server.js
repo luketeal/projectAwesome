@@ -4,7 +4,7 @@ const session = require('express-session'); // done
 const exphbs = require('express-handlebars'); // done
 const routes = require('./controllers'); // will keep
 var env = require('dotenv') // done
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 const bcrypt = require('bcrypt'); // --> not needed here?
 const passport = require('passport')  // done
@@ -16,7 +16,7 @@ const app = express(); // done
 const PORT = process.env.PORT || 3001; // will keep
 
 // Set up Handlebars.js engine with custom helpers
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 // -----------------------initailizePassport --------------------------
 // const initializePassport = require('./config/passport-config')
@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 3001; // will keep
 // --------------------------------------------------------------------
 
 
-const hbs = exphbs.create();// done
+// const hbs = exphbs.create();// done
 
 // const sess = {
 //   secret: process.env.SESSION_SECRET,
