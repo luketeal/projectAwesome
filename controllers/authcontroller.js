@@ -56,13 +56,17 @@ exports.garage = async function(req, res) {
         }
         )
         const userData = await User.findByPk(req.user.id)
+        const raceData = await Race.findAll({where: {owner_id: req.user.id}})
         const cars = carData.map((car) => car.get({ plain: true }));
         const user = userData.get({ plain: true });
-        console.log(user.id + ' please work')
+        const races = raceData.map((race) => race.get({ plain: true }));
+
+        console.log(races)
         // console.log(cars[0].car_race)
         res.render('garage', {
             cars,
-            user
+            user,
+            races
         });
     } catch (err) {
         res.status(500).json(err);

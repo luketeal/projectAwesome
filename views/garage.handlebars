@@ -130,20 +130,47 @@
             <div class="col-md-6 p-4">
                 <div class="card flex-mb-4 box-shadow h-md-250">
                     <div class="card-body d-flex flex-column align-items-start">
-                        <img src="https://image.freepik.com/free-vector/suzuka-circuit-motorsport-autosport-japan-grand-prix-race-track_97886-5398.jpg"
-                            class="card-img-top" alt="suzuka">
-                        {{#each cars as |car|}}
-                        {{#each car.car_race as |race|}}
-                        <ul>
-                            <h5 class="card-title text-center pt-3">{{race.title}}</h5>
-                            <li>Town: {{race.location_town}}</li>
-                            <li>State: {{race.location_state}}</li>
-                            <li>Date: {{race.race_date}}</li>
-                        </ul>
-                        {{/each}}
-                        {{/each}}
+                        {{!-- <img src="https://image.freepik.com/free-vector/suzuka-circuit-motorsport-autosport-japan-grand-prix-race-track_97886-5398.jpg"
+                            class="card-img-top" alt="suzuka"> --}}
+                        {{!-- {{#each cars as |car|}} --}}
 
+                        {{!-- {{/each}} --}}
+                        <div class="container text-center">
+                            <div class="text-center pt-3">
+                                <h4>Have a race track?  Host a race!</h4>
+                            </div>
 
+                            <div class="col-lg-6 offset-lg-3 mt-5">
+                                <form id="races" name="races" class="col-md-6 offset-md-3">
+                                    <div class="row mb-3">
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Race Name">
+                                    </div>
+                                    <div class="row mb-3">
+                                        <input type="text" class="form-control" id="location_town" name="location_town" placeholder="Town/City">
+                                    </div>
+                                    <div class="row mb-3">
+                                        <input type="text" class="form-control" id="location_state" name="location_state" placeholder="State">
+                                    </div>
+                                    <div class="row mb-3">
+                                        <input type="date" class="form-control" id="race_date" name="race_date">
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="col-lg-12">
+                                            <button type="button" class="racePost btn1 mt-3 mb-5">Create a Race</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        {{#each races as |race|}}
+                        <div class="container text-center">
+                            <h3 class="card-title text-center pt-3">{{race.title}}</h3>
+                            <p>{{race.location_town}}, {{race.location_state}} on {{race.race_date}}</p>
+                        </div>
+                        {{/each}}
+                        
                     </div>
                 </div>
             </div>
