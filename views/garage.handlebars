@@ -16,13 +16,13 @@
                     <input type="text" class="form-control" id="model" name="model" placeholder="Model">
                 </div>
                 <div class="row mb-3">
-                    <input type="text" class="form-control" id="horsepower" name="horsepower" placeholder="Horsepower">
+                    <input type="number" class="form-control" id="horsepower" name="horsepower" placeholder="Horsepower">
                 </div>
                 <div class="row mb-3">
-                    <input type="text" class="form-control" id="topSpeed" name="topSpeed" placeholder="Top Speed">
+                    <input type="number" class="form-control" id="topSpeed" name="topSpeed" placeholder="Top Speed">
                 </div>
                 <div class="row mb-3">
-                    <input type="text" class="form-control" id="acceleration" name="acceleration"
+                    <input type="number" class="form-control" id="acceleration" name="acceleration"
                         placeholder="Acceleration">
                 </div>
 
@@ -77,8 +77,48 @@
                                 {{/each}}
                             </ul>
                         </div>
-                        <input class="btn btn-dark mb-2" type="button" value="Update" data-id="{{car.id}}">
+                        <input class="btn btn-dark mb-2" type="button" value="Update" data-bs-toggle="modal" data-bs-target="#car{{car.id}}">
                         <input class="btn btn-warning mb-2 deleteButton" type="button" value="Delete" data-id="{{car.id}}">
+
+                          <!-- Modal -->
+                        <div class="modal fade" id="car{{car.id}}" tabindex="-1" aria-labelledby="car{{car.id}}Label" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="car{{car.id}}Label">Update your specs</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form class="carPost-form">
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="carMake{{car.id}}" class="form-label">Make</label>
+                                        <input type="text" class="form-control" id="carMake{{car.id}}" value="{{car.make}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="carModel{{car.id}}" class="form-label">Model</label>
+                                        <input type="text" class="form-control" id="carModel{{car.id}}" value="{{car.model}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="carhorsepower{{car.id}}" class="form-label">Horsepower (hp)</label>
+                                        <input type="number" class="form-control" id="carhorsepower{{car.id}}" value="{{car.horsepower}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cartopSpeed{{car.id}}" class="form-label">Top Speed (mph)</label>
+                                        <input type="number" class="form-control" id="cartopSpeed{{car.id}}" value="{{car.topSpeed}}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="caracceleration{{car.id}}" class="form-label">Goes 0-60 in how many seconds?</label>
+                                        <input type="number" class="form-control" id="caracceleration{{car.id}}" value="{{car.acceleration}}">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-warning updateButton" data-id={{car.id}}>Save changes</button>
+                                </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
 
                         {{/each}}
                     </div>
