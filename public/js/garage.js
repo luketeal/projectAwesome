@@ -1,6 +1,6 @@
 let carPostButton = document.querySelector('.carPost')
 let deleteButtons = document.querySelectorAll('.deleteButton')
-// let udpateButtons = document.querySelectorAll('.udpateButton')
+let updateButtons = document.querySelectorAll('.updateButton')
 
 // console.log(req.user)
 
@@ -29,27 +29,30 @@ const carPostFormHandler = async (event) => {
     }
   };
 
-// const carUpdateFormHandler = async (event) => {
-//   event.preventDefault();
-//   const id = event.target.getAttribute('data-id')
+const carUpdateFormHandler = async (event) => {
+  event.preventDefault();
+  const id = event.target.getAttribute('data-id')
 
-//   const title = document.querySelector(`#postTitle${id}`).value.trim();
-//   const content = document.querySelector(`#postContent${id}`).value.trim();
+  const make = document.querySelector(`#carMake${id}`).value.trim();
+  const model = document.querySelector(`#carModel${id}`).value.trim();
+  const horsepower = document.querySelector(`#carhorsepower${id}`).value.trim();
+  const topSpeed = document.querySelector(`#cartopSpeed${id}`).value.trim();
+  const acceleration = document.querySelector(`#caracceleration${id}`).value.trim();
 
-//   if (title && content && id) {
-//     const response = await fetch(`/api/blogPost/`, {
-//       method: 'PUT',
-//       body: JSON.stringify({ title, content, id }),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
+  if (make && model && horsepower && topSpeed && acceleration && id) {
+    const response = await fetch(`/api/cars/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ make, model, horsepower, topSpeed, acceleration }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-//     if (response.ok) {
-//       document.location.reload();
-//     } else {
-//       alert(response.statusText);
-//     }
-//   }
-// };
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
 
 const carDeleteHandler = async (event) => {
   event.preventDefault();
@@ -73,9 +76,9 @@ document
   .querySelector('.carPost')
   .addEventListener('click', carPostFormHandler);
 
-// for(each of updateButtons) {
-//   each.addEventListener('click', carUpdateFormHandler);
-// }
+for(each of updateButtons) {
+  each.addEventListener('click', carUpdateFormHandler);
+}
 
 for(each of deleteButtons) {
   each.addEventListener('click', carDeleteHandler);
