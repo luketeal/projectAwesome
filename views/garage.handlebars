@@ -168,6 +168,9 @@
                         <div class="container text-center">
                             <h3 class="card-title text-center pt-3">{{race.title}}</h3>
                             <p>{{race.location_town}}, {{race.location_state}} on {{race.race_date}}</p>
+                            <input class="btn btn-dark mb-2" type="button" value="Update" data-bs-toggle="modal" data-bs-target="#car{{car.id}}">
+                            <input class="btn btn-warning mb-2 raceDeleteButton" type="button" value="Delete" data-id="{{race.id}}">
+
                         </div>
                         {{/each}}
                         
