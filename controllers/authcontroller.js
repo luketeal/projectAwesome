@@ -21,10 +21,8 @@ exports.homepage = async function(req, res) {
     const raceData = await Race.findAll();
     const carData = await Car.findAll({where: {user_id: req.user.id}})
     const cars= carData.map((car) => car.get({ plain: true }));
-  
     const races = raceData.map((race) => race.get({ plain: true }));
     console.log(races);
-    console.log(cars)
     res.render('homepage', {
         races, 
        cars
