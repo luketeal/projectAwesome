@@ -1,25 +1,29 @@
 <section class="jumbotron">
     <div class="container text-center">
-        <h1 class="jumbotron-heading">
+        <h1 class="jumbotron-heading mb-3">
             Upcoming races
         </h1>
         <p>
-            Sometimes you just wanna go fast. Check out the track info below to get started.
+            Sometimes you just have the urge to go fast!
+            <br><strong>Paddock</strong> can get you <strong><i>the drop</i></strong> on the next track day.
+            {{!-- <br>Enter your car info in the garage and get on the track! --}}
+            <br>Check out the track info below!
         </p>
         <div class="text-center">
             <div class="col-lg-4 offset-lg-4">
-                <button type="button" class="btn1 mt-3 mb-5">
-                    Sign-in to view races?
-                </button>
+                {{!-- <button type="submit" class="btn2 mt-3 mb-5"> --}}
+                    <a class="btn btn2" href="/garage">Go to your garage</a>
             </div>
+            {{!-- <img src="./assets/chicken.normal.png" class="img-fluid" width="80px" height="80px" alt="chicken">
+            --}}
         </div>
     </div>
 </section>
 
-{{!-- vv Cards only available after user login? vv --}}
-{{!-- Need to fix img links, won't load from assets? --}}
-
 <div class="album py-5 bg-light">
+    <div class="text-center pb-4">
+        <h3 class="font-weight-bold py-4">Events &amp; Race Tracks:</h3>
+    </div>
     <div class="container">
         <div class="row">
 
@@ -36,10 +40,11 @@
                     </ul>
                     {{!-- this will be a dropdown with a list of items to register for race --}}
                     <form>
-                        <select class="form-control">
-                            {{#each cars as |car|}}
-                            <option>{{car.make}}{{car.model}}</option>
-                            <option>car selection</option>
+                        <select class="form-control" aria-label="default selection">
+                            <option selected>Garage</option>
+                            {{!-- remember directory structure for nested handlbars to access data ../ --}}
+                            {{#each ../cars as |car|}}
+                            <option>{{car.make}} {{car.model}}</option>
                             {{/each}}
                         </select>
                         <div class="mt-4 text-center">
@@ -52,36 +57,3 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-
-                            {{#each cars as |car|}}
-                            <option>{{car.make}}{{car.model}}</option>
-                            <option>car selection</option>
-                            {{/each}}
-{{!-- Need links and hrefs etc for items ^^^^ --}}
-
-{{!-- ============================================================================ --}}
-
-{{!-- <p>this is the homepage</p>
-<p>TODO: Display upcoming Races</p>
-<p>accessible info includes</p>
-<ul>
-    <li>race id</li>
-    <li>location name</li>
-    <li>race location_town</li>
-    <li>race location state</li>
-    <li>race date</li>
-</ul>
-{{#each races as |race|}}
-<a href="/race/{{race.id}}">
-    <div>
-        <p>race id: {{race.id}}</p>
-        <p>location name: {{race.title}}</p>
-        <p>race location_town: {{race.location_town}}</p>
-        <p>race location_state: {{race.location_state}}</p>
-        <p>race date: {{race.race_date}}</p>
-    </div>
-</a>
-<hr class="m-3">
-{{/each}} --}}

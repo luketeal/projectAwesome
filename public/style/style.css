@@ -47,3 +47,21 @@ img {
     border: 1px solid;
     color: black;
 }
+
+.btn2 {
+    padding-top: 10px;
+    border: 1px solid;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: #ff9e00;
+    color: black;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn2:hover {
+    background: black;
+    border: 1px solid;
+    color: white;
+}
