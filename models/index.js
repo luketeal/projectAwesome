@@ -12,6 +12,15 @@ Car.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+User.hasMany(Race, {
+  foreignKey: 'owner_id',
+  onDelete: 'CASCADE'
+});
+
+Race.belongsTo(User, {
+  foreignKey: 'owner_id'
+});
+
 Race.belongsToMany(Car, {
       // Define the third table needed to store the foreign keys
   through: {
