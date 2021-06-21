@@ -1,7 +1,7 @@
 <section class="jumbotron">
     <div class="container text-center">
         <h1 class="jumbotron-heading mb-3">
-            Upcoming races
+            Track Day
         </h1>
         <p>
             Sometimes you just have the urge to go fast!
@@ -22,7 +22,7 @@
 
 <div class="album py-5 bg-light">
     <div class="text-center pb-4">
-        <h3 class="font-weight-bold py-4">Events &amp; Race Tracks:</h3>
+        <h2 class="font-weight-bold py-4">Events &amp; Race Tracks:</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -40,8 +40,8 @@
                     </ul>
                     {{!-- this will be a dropdown with a list of items to register for race --}}
                     <form>
+                        <label class="offset-sm-1"> <strong> Select a vehicle:</strong></label>
                         <select class="form-control" id = "selectMenu{{race.id}}" aria-label="default selection">
-                            <option selected>Garage</option>
                             {{!-- remember directory structure for nested handlbars to access data ../ --}}
                             {{#each ../cars as |car|}}
                             <option id="car{{car.id}}" data-id="{{car.id}}">{{car.make}} {{car.model}}</option>
