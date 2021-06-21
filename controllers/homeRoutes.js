@@ -5,7 +5,7 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 
 router.get('/login', async (req, res) => {
-  
+
     res.render('login');
 });
 
@@ -19,12 +19,12 @@ router.post('/login', passport.authenticate('local', {
 
 
 router.get('/logout', async (req, res) => {
-  
+
     res.render('logout');
 });
 
 router.get('/signup', async (req, res) => {
-  
+
     res.render('signup');
 });
 
@@ -39,12 +39,14 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: hashedPassword
         })
-        res.redirect('/login')
-    }catch {
+        //changed this vvvvv
+        res.redirect('/garage')
+    } catch {
         res.redirect('/signup')
 
     }
     console.log(users)
+
 
 })
 // ----------------------------------------------------------------------
@@ -52,53 +54,51 @@ router.post('/signup', async (req, res) => {
 //               This is a passport function 
 //                     | checkAuthenticated
 //                     V
-router.get('/',async (req, res) => {
-  try 
-  {
-    // Get all Race data
-    const raceData = await Race.findAll();
-    const races = raceData.map((race) => race.get({ plain: true }));
-    // console.log(races)
-    res.render('homepage', {
-        races, 
-        logged_in: req.session.logged_in
-    });
-  } catch (err) {
+router.get('/', async (req, res) => {
+    try {
+        // Get all Race data
+        const raceData = await Race.findAll();
+        const races = raceData.map((race) => race.get({ plain: true }));
+        // console.log(races)
+        res.render('homepage', {
+            races,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
         res.status(500).json(err);
         console.log(err)
     }
 });
 
 router.get('/garage', async (req, res) => {
-  
+
     res.render('garage');
 });
 
 router.get('/race/:id', async (req, res) => {
-    try 
-  {
-    // Get Race data
-    const raceData = await Race.findByPk(req.params.id,
-        {
-            include:
-            [
-                {
-                    model: Car, 
-                    through: Entry, 
-                    as: 'race_car',
-                    attributes: ['make', 'model', 'horsepower', 'topSpeed', 'acceleration', 'user_id'],
-                    include: [{model: User, attributes: ['name']}]
-                }
-            ]
-        }
-    );
-    const race = raceData.get({ plain: true });
-    console.log(race)
-    res.render('race', {
-        race, 
-        logged_in: req.session.logged_in
-    });
-  } catch (err) {
+    try {
+        // Get Race data
+        const raceData = await Race.findByPk(req.params.id,
+            {
+                include:
+                    [
+                        {
+                            model: Car,
+                            through: Entry,
+                            as: 'race_car',
+                            attributes: ['make', 'model', 'horsepower', 'topSpeed', 'acceleration', 'user_id'],
+                            include: [{ model: User, attributes: ['name'] }]
+                        }
+                    ]
+            }
+        );
+        const race = raceData.get({ plain: true });
+        console.log(race)
+        res.render('race', {
+            race,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
         res.status(500).json(err);
         console.log(err)
     }
