@@ -34,15 +34,18 @@
         <li class="nav-item">
           <a class="nav-link" href="/garage">Garage &nbsp;|</a>
         </li>
+        {{#if logged_in}}
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
+        {{else}}
         <li class="nav-item">
           <a class="nav-link" href="/signup">Sign Up &nbsp;|</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/login">Log In &nbsp;|</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Log Out</a>
-        </li>
+        {{/if}}
       </ul>
     </div>
   </div>
