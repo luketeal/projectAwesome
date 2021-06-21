@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 
 
 // http://localhost:3001/api/cars/id
-router.put('/', async (req, res) => {    // Need to find out path to where we will be entering car info.
+router.put('/:id', async (req, res) => {    // Need to find out path to where we will be entering car info.
 
     const carData = await Car.findByPk(req.params.id)
 
