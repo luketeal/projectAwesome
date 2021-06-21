@@ -36,19 +36,19 @@
                     <ul>
                         <li>{{race.location_town}}</li>
                         <li>{{race.location_state}}</li>
-                        <li>{{race.race_date}}</li>
+                        <li>{{format_date race.race_date}}</li>
                     </ul>
                     {{!-- this will be a dropdown with a list of items to register for race --}}
                     <form>
                         <label class="offset-sm-1"> <strong> Select a vehicle:</strong></label>
-                        <select class="form-control" aria-label="default selection" placeholder="somehting">
+                        <select class="form-control" id = "selectMenu{{race.id}}" aria-label="default selection">
                             {{!-- remember directory structure for nested handlbars to access data ../ --}}
                             {{#each ../cars as |car|}}
-                            <option>{{car.make}} {{car.model}}</option>
+                            <option id="car{{car.id}}" data-id="{{car.id}}">{{car.make}} {{car.model}}</option>
                             {{/each}}
                         </select>
                         <div class="mt-4 text-center">
-                            <button type="submit" class="btn btn-dark">Register for race</button>
+                            <button type="button" class="btn btn-dark registerButton" data-id="{{race.id}}">Register for race</button>
                         </div>
                     </form>
                 </div>
@@ -57,3 +57,6 @@
         </div>
     </div>
 </div>
+
+
+<script src="../js/homePage.js"></script>
