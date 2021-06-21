@@ -40,8 +40,8 @@
                     </ul>
                     {{!-- this will be a dropdown with a list of items to register for race --}}
                     <form>
-                        <select class="form-control" aria-label="default selection">
-                            <option selected>Select a vehicle:</option>
+                        <label class="offset-sm-1"> <strong> Select a vehicle:</strong></label>
+                        <select class="form-control" aria-label="default selection" placeholder="somehting">
                             {{!-- remember directory structure for nested handlbars to access data ../ --}}
                             {{#each ../cars as |car|}}
                             <option>{{car.make}} {{car.model}}</option>
