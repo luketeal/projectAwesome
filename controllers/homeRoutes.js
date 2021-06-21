@@ -39,7 +39,7 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: hashedPassword
         })
-        //changed this vv
+        //changed this vvvvv
         res.redirect('/garage')
     } catch {
         res.redirect('/signup')

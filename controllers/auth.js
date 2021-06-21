@@ -10,7 +10,8 @@ module.exports = function (app, passport) {
     });
 
     //remove this reference that doesnt go anywhere. it was confused.
-    //I had a little trouble reading this
+    //I had a little trouble reading the routing
+    //need error handlers
 
 
     // app.get('/garage', isLoggedIn, function (req, res) {
