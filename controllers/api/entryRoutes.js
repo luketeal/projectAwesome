@@ -5,8 +5,11 @@ const Entry = require('../../models/Entry');
 
 router.post('/', async (req, res) => {
 
-    const entryData = await Entry.create(req.body);
-  
+    const entryData = await Entry.create({
+      race_id: req.body.race_id,
+      user_id: req.session.passport.user,
+      car_id: req.body.car_id
+    });
     return res.json(entryData);
   });
 
