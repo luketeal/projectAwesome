@@ -40,15 +40,17 @@
                     </ul>
                     {{!-- this will be a dropdown with a list of items to register for race --}}
                     <form>
-                        <label class="offset-sm-1"> <strong> Select a vehicle:</strong></label>
-                        <select class="form-control" id = "selectMenu{{race.id}}" aria-label="default selection">
+                        <select class="form-control" id="selectMenu{{race.id}}" aria-label="default selection">
                             {{!-- remember directory structure for nested handlbars to access data ../ --}}
+                            {{!-- Can also use:<option selected disabled>Select a vehicle:</option> --}}
+                            <option hidden>Select a vehicle:</option>
                             {{#each ../cars as |car|}}
                             <option id="car{{car.id}}" data-id="{{car.id}}">{{car.make}} {{car.model}}</option>
                             {{/each}}
                         </select>
                         <div class="mt-4 text-center">
-                            <button type="button" class="btn btn-dark registerButton" data-id="{{race.id}}">Register for race</button>
+                            <button type="button" class="btn btn-dark registerButton" data-id="{{race.id}}">Register for
+                                race</button>
                         </div>
                     </form>
                 </div>
