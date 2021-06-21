@@ -34,6 +34,10 @@ Race.init(
         model: 'user',
         key: 'id',
       },
+      track_image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
     },
   },
   {
