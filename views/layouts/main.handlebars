@@ -35,22 +35,19 @@
         <li class="nav-item">
           <a class="nav-link" href="/garage">Garage &nbsp;|</a>
         </li>
+        {{#if logged_in}}
         <li class="nav-item">
-          <a class="nav-link" href="/logout">Log Out &nbsp;|</a>
+          <a class="nav-link" href="/logout">Log Out</a>
         </li>
-
-
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Log In &nbsp;|</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup">Sign Up</a>
-          </li>
-        </ul>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">Sign Up &nbsp;|</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In &nbsp;|</a>
+        </li>
+        {{/if}}
       </ul>
-
-
     </div>
   </div>
 </nav>

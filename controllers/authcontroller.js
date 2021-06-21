@@ -23,9 +23,13 @@ exports.homepage = async function(req, res) {
     const cars= carData.map((car) => car.get({ plain: true }));
     const races = raceData.map((race) => race.get({ plain: true }));
     console.log(races);
+
+    let logged_in = true
+
     res.render('homepage', {
         races, 
-       cars
+        cars,
+        logged_in
     });
     } catch (err) {
         res.status(500).json(err);
@@ -53,6 +57,7 @@ exports.garage = async function(req, res) {
             ]
         }
         )
+        let logged_in = true
         const userData = await User.findByPk(req.user.id)
         const raceData = await Race.findAll({where: {owner_id: req.user.id}})
         const cars = carData.map((car) => car.get({ plain: true }));
@@ -64,7 +69,8 @@ exports.garage = async function(req, res) {
         res.render('garage', {
             cars,
             user,
-            races
+            races,
+            logged_in
         });
     } catch (err) {
         res.status(500).json(err);
