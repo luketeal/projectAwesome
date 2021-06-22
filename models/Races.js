@@ -35,10 +35,10 @@ Race.init(
         key: 'id',
       }
       },
-      track_image: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        },
+    track_image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      },
     
   },
   {
