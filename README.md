@@ -1,56 +1,51 @@
-# projectAwesome
+# Paddock
 
 ## Description
 
-The tasks is to design and build an app that combines a robust back end--with servers, databases, advanced APIs, and user authentication—-to an intuitive front end. we were to use the MVC paradigm, create our own server-side API,  have user authentication, and connect to a database.
+Paddock is an app that combines a robust back end--with servers, databases, advanced APIs, and user authentication—-to an intuitive front end. We used the MVC paradigm, created our own server-side API, and used Passport for authentication, and connect to a database.
 
 ## User Story
 
-As a Racing Enthusiast, I want to be able to sign up to participate in races with my vehicle, add my vehicles to my garage with their specs also be able to register for a race and see the races that I have signed my cars up for.  
+As a Racing Enthusiast, I want to be able to sign up to participate in races with my vehicle, add my vehicles to my garage with their specs, register my vehicles for a race, and see the races that I have signed my cars up for.
 
 As a Track Owner, I want to be able to post track events. Once its posted, I would like to be able to manage my posting by editing and or deleting posted events.
 
 
 ## Acceptance Criteria
-(Need to update)
 
-AS a RACING ENTHUSIAST, I want to be able to sign up to participate in races with my vehicle
-
-AS a RACE TRACK OWNER, I want to be able to post events for my track
-New
-9:29
-
-we wrote these last night which could be changed into acceptance criteria also:
-
-AS a RACING ENTHUSIAST, I need to be able to add my vehicles to my garage with they’re specs
-
-AS a RACING ENTHUSIAST, I need to be able to register for a race
-
-AS a RACING ENTHUSIAST, I want to be able to see the races I’ve signed my cars for
-
-Build a command-line application that at a minimum allows the user to:
-
-  * Add departments, roles, employees
-
-  * View departments, roles, employees
-
-  * Update employee roles
+```md
+WHEN I go to the page but am not authenticated,
+THEN I am sent to the login page.
+WHEN I log in
+THEN I am directed to the homepage where I can view available races and sign my cars up for a race.
+WHEN I go to my garage
+THEN I can see the cars I have and the races they are signed up for
+WHEN I go to my garage
+THEN I can add cars to my garage
+WHEN I add a car
+THEN the car and specs are loaded to the web page
+WHEN I create a race
+THEN I can see the race details in my garage and it is available on the homepage for others to sign up for
+WHEN I update a car or a race
+THEN the updated details are populated to my garage and homepage.
+WHEN I delete a car or race
+THEN the car or race is removed from the garage an homepage
+```
 
 
 ## Table
-(check for updating)
-future and screen shot need work
+
 - [Installation](#installation)
-- [Screenshot](#screenshot)
+- [Screenshots](#screenshots)
 - [Deployment](#deployment)
 - [Repository](#repository)
 - [Credits](#credits)
-- [Future Development](#FutureDevelopment)
+- [Future Development](#future-development)
 - [License](#license)
 
 
 ## Installation
-(check for updating)
+
 Once pulled over from gitHub onto your local machine.
 - First is to open up Microsoft Visual Studio Code.
     
@@ -62,13 +57,16 @@ Once pulled over from gitHub onto your local machine.
 
 - Run npm install for needed dependencies.
 
-(need to update)
-## Screenshot
-(need to update) need to add video
+## Screenshots
 
-and video link
 
-[![screenshot](public/assets/screenshot.png)](https://youtu.be/pUDFF4eHPfk)
+
+![screenshot](public/assets/screenshot.png)
+![screenshot](public/assets/screenshot4.png)
+<br>
+
+![screenshot](public/assets/screenshot2.png)
+![screenshot](public\assets\screenshot3.png)
 <br>
 
 ## Deployment
@@ -80,7 +78,6 @@ https://github.com/luketeal/projectAwesome
 
 
 ## Credits
-(check for updating) check for more credits to add
 
 https://bootcamp.unh.edu/ 
   
@@ -90,10 +87,11 @@ https://choosealicense.com/
 
 https://code.tutsplus.com/tutorials/using-passport-with-sequelize-and-mysql--cms-27537
 
+
+(Node.js Passport Login System Tutorial)<br>https://youtu.be/-RCnNyD0L-s
+
 https://www.freepik.com/
     
-
-
 
 
 ## Future Development
@@ -138,57 +136,6 @@ SOFTWARE.
 
 
 
-
-
-
-
-
-
-
-
-
-
-# Unit 15: Project 2
-
-## Overview
-
- 
-
-## Key Topics
-
-The following topics will be covered in this unit:
-
-* Full-stack applications
-
-* [Git branching workflow](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-
-* [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development)
-
-* Collaborative development
-
-## Learning Objectives
-
-You will be employer-ready if you are able to:
-
-* Speak technically about a feature you implemented in your project
-
-* Explain and execute git branching workflow in a collaborative project
-
-* Resolve merge conflicts
-
-* Explain agile software development
-
-* Design, build and deploy a full-stack web application to Heroku
-
-* Prepare a professional presentation and repository README for your project
-
-## Homework
-
-
-
-
-
-## Resources
 
 
 
