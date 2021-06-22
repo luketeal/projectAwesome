@@ -9,6 +9,7 @@ router.post('/', async (req, res) => {
         location_state: req.body.location_state,
         race_date: req.body.race_date,
         owner_id: req.session.passport.user,
+        track_image: req.body.track_image
     });
   
     return res.json(routeData);
@@ -24,6 +25,7 @@ router.put('/:id', async (req, res) => {    // Need to find out path to where we
         raceData.location_state = req.body.location_state;
         raceData.race_date = req.body.race_date;
         raceData.owner_id = req.session.passport.user;
+        raceData.track_image = req.body.track_image;
         await raceData.save()
     }
     else {

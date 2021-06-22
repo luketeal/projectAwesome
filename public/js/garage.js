@@ -79,11 +79,12 @@ const racePostFormHandler = async (event) => {
   const location_town = document.querySelector('#location_town').value.trim();
   const location_state = document.querySelector('#location_state').value.trim();
   const race_date = document.querySelector('#race_date').value.trim();
+  const track_image = document.querySelector('#track_image').value.trim();
 
   if (title && location_town && location_state && race_date) {
     const response = await fetch(`/api/race/`, {
       method: 'POST',
-      body: JSON.stringify({ title, location_town, location_state, race_date}),
+      body: JSON.stringify({ title, location_town, location_state, race_date, track_image}),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -104,11 +105,12 @@ const raceUpdateFormHandler = async (event) => {
   const location_town = document.querySelector(`#racelocation_town${id}`).value.trim();
   const location_state = document.querySelector(`#racelocation_state${id}`).value.trim();
   const race_date = document.querySelector(`#race_date${id}`).value.trim();
+  const track_image = document.querySelector(`#racetrack_image${id}`).value.trim();
 
   if (title && location_town && location_state && race_date && id) {
     const response = await fetch(`/api/race/${id}`, {
       method: 'PUT',
-      body: JSON.stringify({ title, location_town, location_state, race_date, id }),
+      body: JSON.stringify({ title, location_town, location_state, race_date, track_image, id }),
       headers: { 'Content-Type': 'application/json' },
     });
 
