@@ -70,9 +70,10 @@
                                 <li>
                                     <h4>0-60 (sec): <strong>{{car.acceleration}}</strong></h4>
                                 </li>
+                                <h4>Registered for:</h4>
                                 {{#each car.car_race as |race|}}
                                 <li>
-                                    <h4>Race Track: <strong>{{race.title}}</strong></h4>
+                                    <h5><strong>{{race.title}} - {{format_date race.race_date}}</strong></h5>
                                 </li>
                                 {{/each}}
                             </ul>
