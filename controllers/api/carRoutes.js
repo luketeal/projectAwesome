@@ -1,8 +1,6 @@
 const router = require('express').Router();
-// const { beforeBulkDestroy } = require('../../models/Cars');
-// const { Car } = require('../../models');
 const Car = require('../../models/Cars'); 
-// const withAuth = require('../../utils/auth');
+
 
 // http://localhost:3001/api/cars
 router.get('/', async (req, res) => {
