@@ -1,64 +1,35 @@
-const path = require('path'); // will keep
-const express = require('express'); // done
-const session = require('express-session'); // done
-const exphbs = require('express-handlebars'); // done
-const routes = require('./controllers'); // will keep
-var env = require('dotenv') // done
+const path = require('path'); 
+const express = require('express'); 
+const session = require('express-session'); 
+const exphbs = require('express-handlebars'); 
+const routes = require('./controllers'); 
+var env = require('dotenv') 
 const helpers = require('./utils/helpers');
 
-const bcrypt = require('bcrypt'); // --> not needed here?
-const passport = require('passport')  // done
+const bcrypt = require('bcrypt'); 
+const passport = require('passport')  
 
-const sequelize = require('./config/connection'); // done
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);  -->not used right now 
+const sequelize = require('./config/connection'); 
 
-const app = express(); // done
-const PORT = process.env.PORT || 3001; // will keep
+const app = express(); 
+const PORT = process.env.PORT || 3001; 
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
-// -----------------------initailizePassport --------------------------
-// const initializePassport = require('./config/passport-config')
-// initializePassport(
-//     passport, 
-//     email => users.find(user => user.email === email),
-//     id => users.find(user => user.id === id)
-// )
-// --------------------------------------------------------------------
-
-
-// const hbs = exphbs.create();// done
-
-// const sess = {
-//   secret: process.env.SESSION_SECRET,
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize
-//   })
-// };
-
-// app.use(session(sess));
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // done
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); 
 
 // Inform Express.js on which template engine to use
-app.engine('handlebars', hbs.engine);// done
-app.set('view engine', 'handlebars');// done
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
-app.use(express.json()); // done
-app.use(express.urlencoded({ extended: true })); // done
-app.use(express.static(path.join(__dirname, 'public'))); // will keep
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
+app.use(express.static(path.join(__dirname, 'public'))); 
 
-app.use(routes); // will keep
+app.use(routes); 
 
 // ------------------------------passport code start------------------------
-// app.use(session({
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: false
-// }))
 
 app.use(passport.initialize())// done
 app.use(passport.session())// done
@@ -78,23 +49,5 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on http://localhost:3001/'));
 });
 
-
-
-
-
-
-// const connection = mysql.createConnection({
-//     host: 'localhost',
-  
-//     // Your port; if not 3306
-//     port: 3306,
-  
-//     // Your username
-//     user: 'root',
-  
-//     // Your password
-//     password: '',
-//     database: 'paddock_db',
-//   });
 
   
