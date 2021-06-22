@@ -66,7 +66,7 @@ Once pulled over from gitHub onto your local machine.
 <br>
 
 ![screenshot](public/assets/screenshot2.png)
-![screenshot](public\assets\screenshot3.png)
+![screenshot](public/assets/screenshot3.png)
 <br>
 
 ## Deployment
